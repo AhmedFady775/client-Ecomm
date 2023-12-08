@@ -19,26 +19,22 @@ export default function Recommended() {
   ) : (
     <div className="flex flex-col gap-4 shadow p-4">
       <p className="text-lg font-bold">Recommended for you</p>
-      <div className="grid grid-cols-4 ">
+      <div className="grid grid-cols-4 bg-gray-200 gap-[1px]">
         {products.products.map((product) => (
           <Link
-            className="flex flex-col px-6 py-5 bg-white lg:hover:shadow-2xl transition-all"
+            className="flex flex-col px-6 py-5 bg-white group"
             to={`/products/${product._id}`}
           >
             <div className="mb-10 mx-auto">
               <div className="lg:h-[168px] lg:w-[168px] h-[120px] w-[120px]">
-                {product.image ? (
-                  <img
-                    className="h-full w-full object-contain"
-                    src={product.image}
-                    alt={product.title}
-                  />
-                ) : (
-                  <CircularProgress />
-                )}
+                <img
+                  className="h-full w-full object-contain group-hover:scale-105 transition-all"
+                  src={product.image}
+                  alt={product.title}
+                />
               </div>
             </div>
-            <p className="flex mb-2 h-24 lg:h-16">{product.slug} </p>
+            <p className="flex mb-2 h-24 lg:h-24">{product.slug} </p>
             <div className="flex flex-row items-end">
               <p className="leading-4 text-xl font-semibold">
                 {" "}
