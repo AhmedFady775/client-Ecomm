@@ -13,7 +13,7 @@ export default function Recommended() {
   });
 
   return isLoading ? (
-    <div>
+    <div className="p-10 flex justify-center items-center">
       <CircularProgress color="inherit" />
     </div>
   ) : (
