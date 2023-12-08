@@ -3,12 +3,16 @@ import { Link } from "react-router-dom";
 import { categoriesList } from "./constants";
 import DropDownList from "../ui/DropDownList";
 
-export default function CategoriesMenuDropdown({ categoriesMenu }) {
+export default function CategoriesMenuDropdown({
+  categoriesMenu,
+  setCategoriesMenu,
+}) {
   return (
     <DropDownList open={categoriesMenu}>
       <ul className="flex flex-col">
         {categoriesList.map((category, i) => (
           <Link
+            onClick={() => setCategoriesMenu(false)}
             to={category.link}
             className={`hover:bg-[#f4f5f6] transition ${
               categoriesList.length - 1 === i ? "rounded-b-lg" : " "
