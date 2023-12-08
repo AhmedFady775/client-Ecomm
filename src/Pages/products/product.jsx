@@ -50,7 +50,7 @@ const Product = () => {
 
   async function fetchPosts() {
     const { data } = await axios.get(
-      `https://ecomm12.herokuapp.com/products?page=${page}&category=${category}&order=${order}&brand=${brand}`
+      `https://ecomm123-bb55c87dc654.herokuapp.com/products?page=${page}&category=${category}&order=${order}&brand=${brand}`
     );
     return data;
   }
@@ -62,7 +62,7 @@ const Product = () => {
 
   async function fetchCategory() {
     const { data } = await axios.get(
-      `https://ecomm12.herokuapp.com/categories/name/${category}`
+      `https://ecomm123-bb55c87dc654.herokuapp.com/categories/name/${category}`
     );
     return data;
   }

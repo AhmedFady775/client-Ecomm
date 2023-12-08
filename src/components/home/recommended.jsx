@@ -7,9 +7,9 @@ export default function Recommended() {
   const { isLoading, data: products } = useQuery({
     queryKey: ["products"],
     queryFn: () =>
-      fetch(`https://ecomm12.herokuapp.com/products?page=${1}`).then((res) =>
-        res.json()
-      ),
+      fetch(
+        `https://ecomm123-bb55c87dc654.herokuapp.com/products?page=${1}`
+      ).then((res) => res.json()),
   });
 
   return isLoading ? (

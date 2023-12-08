@@ -27,18 +27,21 @@ export default function RegisterForm() {
     validationSchema: registerSchema,
     onSubmit: async (values) => {
       setLoading(true);
-      const res = await fetch("http://localhost:3001/auth/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          firstName: values.firstName,
-          lastName: values.lastName,
-          email: values.email,
-          password: values.password,
-        }),
-      });
+      const res = await fetch(
+        "https://ecomm123-bb55c87dc654.herokuapp.com/auth/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            firstName: values.firstName,
+            lastName: values.lastName,
+            email: values.email,
+            password: values.password,
+          }),
+        }
+      );
       const data = await res.json();
       if (res.status === 201) {
         userSignIn(data);

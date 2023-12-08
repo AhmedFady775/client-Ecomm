@@ -16,7 +16,7 @@ function OrderHistory() {
     queryKey: ["repoData"],
     queryFn: () =>
       axios
-        .get("https://ecomm12.herokuapp.com/orders/mine", {
+        .get("https://ecomm123-bb55c87dc654.herokuapp.com/orders/mine", {
           headers: { authorization: `Bearer ${userInfo.token}` },
         })
         .then((res) => res.data),

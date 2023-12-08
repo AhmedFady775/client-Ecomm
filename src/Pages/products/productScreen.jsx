@@ -21,7 +21,7 @@ function ProductScreen() {
     queryKey: ["repoData", { id }],
     queryFn: () =>
       axios
-        .get(`https://ecomm12.herokuapp.com/products/${id}`)
+        .get(`https://ecomm123-bb55c87dc654.herokuapp.com/products/${id}`)
         .then((res) => res.data),
   });
 

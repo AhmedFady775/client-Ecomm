@@ -33,7 +33,7 @@ function EditProducts() {
 
   async function fetchPosts() {
     const { data } = await axios.get(
-      `https://ecomm12.herokuapp.com/products?page=${page}&category=all&order=${order}&brand=${brand}`
+      `https://ecomm123-bb55c87dc654.herokuapp.com/products?page=${page}&category=all&order=${order}&brand=${brand}`
     );
     return data;
   }
@@ -47,13 +47,13 @@ function EditProducts() {
   //   queryKey: ["Categories"],
   //   queryFn: () =>
   //     axios
-  //       .get("https://ecomm12.herokuapp.com/categories/")
+  //       .get("https://ecomm123-bb55c87dc654.herokuapp.com/categories/")
   //       .then((res) => res.data),
   // });
 
   // async function fetchCategory() {
   //   const { data } = await axios.get(
-  //     `https://ecomm12.herokuapp.com/categories/name/${category}`
+  //     `https://ecomm123-bb55c87dc654.herokuapp.com/categories/name/${category}`
   //   );
   //   return data;
   // }

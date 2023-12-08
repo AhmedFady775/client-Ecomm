@@ -40,7 +40,7 @@ function Account() {
         type: "UPDATE_REQUEST",
       });
       const { data } = await axios.put(
-        "https://ecomm12.herokuapp.com/users/edit",
+        "https://ecomm123-bb55c87dc654.herokuapp.com/users/edit",
         {
           firstName,
           lastName,

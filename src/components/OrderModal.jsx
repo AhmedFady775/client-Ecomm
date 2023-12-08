@@ -22,7 +22,7 @@ export default function OrderModal(props) {
     queryKey: ["repoData", { id }],
     queryFn: () =>
       axios
-        .get(`https://ecomm12.herokuapp.com/orders/${id}`, {
+        .get(`https://ecomm123-bb55c87dc654.herokuapp.com/orders/${id}`, {
           headers: { authorization: `Bearer ${userInfo.token}` },
         })
         .then((res) => res.data),

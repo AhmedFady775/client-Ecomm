@@ -14,7 +14,7 @@ export default function OrderReceipt() {
   const { isLoading, data: order } = useQuery({
     queryKey: ["OrderReceipt", id],
     queryFn: () =>
-      fetch(`http://localhost:3001/orders/${id}`, {
+      fetch(`https://ecomm123-bb55c87dc654.herokuapp.com/orders/${id}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

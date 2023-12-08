@@ -52,13 +52,13 @@ function CreateProducts() {
     queryKey: ["Categories"],
     queryFn: () =>
       axios
-        .get("https://ecomm12.herokuapp.com/categories/")
+        .get("https://ecomm123-bb55c87dc654.herokuapp.com/categories/")
         .then((res) => res.data),
   });
 
   async function fetchCategory() {
     const { data } = await axios.get(
-      `https://ecomm12.herokuapp.com/categories/name/${category}`
+      `https://ecomm123-bb55c87dc654.herokuapp.com/categories/name/${category}`
     );
     return data;
   }
@@ -74,7 +74,7 @@ function CreateProducts() {
     try {
       // dispatch({ type: "CREATE_REQUEST" });
       await axios.post(
-        "https://ecomm12.herokuapp.com/products/create",
+        "https://ecomm123-bb55c87dc654.herokuapp.com/products/create",
         {
           name,
           slug,
@@ -107,7 +107,7 @@ function CreateProducts() {
     try {
       // dispatch({ type: "UPLOAD_REQUEST" });
       const { data } = await axios.post(
-        "https://ecomm12.herokuapp.com/uploads",
+        "https://ecomm123-bb55c87dc654.herokuapp.com/uploads",
         bodyFormData,
         {
           headers: {

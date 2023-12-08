@@ -57,28 +57,31 @@ function Checkout() {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:3001/orders/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${userInfo.token}`,
-        },
-        body: JSON.stringify({
-          orderItems: cartItems,
-          shippingAddress: {
-            fullName: shipment.fullName,
-            address: shipment.address,
-            city: shipment.city,
-            postalCode: shipment.zip,
-            country: shipment.country,
+      const res = await fetch(
+        "https://ecomm123-bb55c87dc654.herokuapp.com/orders/create",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${userInfo.token}`,
           },
-          paymentMethod: payment.paymentMethod,
-          itemsPrice: cartItems.reduce((a, c) => a + c.quantity * c.price, 0),
-          totalPrice: cartItems.reduce((a, c) => a + c.quantity * c.price, 0),
-          taxPrice: 0,
-          shippingPrice: 0,
-        }),
-      });
+          body: JSON.stringify({
+            orderItems: cartItems,
+            shippingAddress: {
+              fullName: shipment.fullName,
+              address: shipment.address,
+              city: shipment.city,
+              postalCode: shipment.zip,
+              country: shipment.country,
+            },
+            paymentMethod: payment.paymentMethod,
+            itemsPrice: cartItems.reduce((a, c) => a + c.quantity * c.price, 0),
+            totalPrice: cartItems.reduce((a, c) => a + c.quantity * c.price, 0),
+            taxPrice: 0,
+            shippingPrice: 0,
+          }),
+        }
+      );
       const data = await res.json();
       if (res.status === 201) {
         setLoading(false);
