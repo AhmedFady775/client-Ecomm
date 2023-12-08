@@ -39,33 +39,27 @@ export const CartItemsStore = create(
         },
         addToCart: (item) => {
           const newItem = { ...item, quantity: 1 };
-          const existItem = get().cartItems.find(
-            (item) => item._id === newItem._id
-          );
+
           set((state) => ({
-            cartItems: existItem
-              ? get().cartItems.map((item) =>
-                  item._id === existItem._id ? newItem : item
-                )
-              : [...state.cartItems, newItem],
+            cartItems: [...state.cartItems, newItem],
           }));
         },
         removeFromCart: (item) => {
           set((state) => ({
-            cartItems: state.cartItems.filter((x) => x.id !== item.id),
+            cartItems: state.cartItems.filter((x) => x._id !== item._id),
           }));
         },
         updateItemQuantity: (item, quantity) => {
           set((state) => ({
             cartItems: state.cartItems.map((x) =>
-              x.id === item.id ? { ...item, quantity } : x
+              x._id === item._id ? { ...item, quantity } : x
             ),
           }));
         },
         clearCart: () => set({ cartItems: [] }),
       }),
       {
-        name: "aloooo",
+        name: "cartItems",
       }
     )
   )

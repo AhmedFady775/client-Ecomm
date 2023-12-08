@@ -2,16 +2,14 @@ import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { Drawer } from "@mui/material";
 import { FiSearch } from "react-icons/fi";
 import { CartItemsStore, userInfoStore } from "../../suztand/Store";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { useRef } from "react";
 import { useEffect } from "react";
-import List from "./list";
-import Something from "./something";
 import { userList } from "./constants";
 import CategoriesMenuDropdown from "./categories_menu_dropdown";
+import UserSection from "./something";
 
 function TopNav() {
   return (
@@ -104,7 +102,7 @@ function Navbar() {
             />
           </div>
           <Search />
-          <Something
+          <UserSection
             userList={userList}
             userSignOut={userSignOut}
             totalQuantity={totalQuantity}

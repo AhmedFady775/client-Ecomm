@@ -38,7 +38,7 @@ function UserDropdown({ open, userList, userInfo, userSignOut }) {
   );
 }
 
-export default function Something({
+export default function UserSection({
   userInfo,
   menuRef,
   userDropdown,
@@ -47,7 +47,6 @@ export default function Something({
   userList,
   userSignOut,
 }) {
-  console.log(userInfo, userList);
   return (
     <div className="flex flex-row items-center lg:gap-8">
       {userInfo ? (

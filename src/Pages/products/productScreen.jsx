@@ -170,7 +170,7 @@ function ProductScreen() {
                 </span>
               </p>
               <div className="flex flex-col p-4">
-                {cartItems.some((item) => item.id === data.id) ? (
+                {cartItems.some((item) => item._id === data._id) ? (
                   <button
                     className="rounded-lg w-full bg-gray-300 px-8 py-3 text-white transition cursor-not-allowed shadow-md"
                     disabled

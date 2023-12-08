@@ -56,7 +56,7 @@ const Product = () => {
   }
 
   const { isLoading, data: products } = useQuery({
-    queryKey: ["repoData", { page, sortPrice, category, order, brand }],
+    queryKey: ["gjhgh", { page, sortPrice, category, order, brand }],
     queryFn: fetchPosts,
   });
 
@@ -68,7 +68,7 @@ const Product = () => {
   }
 
   const { data: categoryfinal } = useQuery({
-    queryKey: ["repoData", { category }],
+    queryKey: ["ghj", { category }],
     queryFn: fetchCategory,
   });
 
@@ -150,7 +150,7 @@ const Product = () => {
         clear
       </p>
       <RadioGroup value={brand} onChange={handleBrandChange}>
-        {products?.brands.map((brand) => (
+        {products?.brands?.map((brand) => (
           <FormControlLabel value={brand} control={<Radio />} label={brand} />
         ))}
       </RadioGroup>
