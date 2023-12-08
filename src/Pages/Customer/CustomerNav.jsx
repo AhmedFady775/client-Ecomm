@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Store } from "../../redux/Store";
 import { BsPersonGear } from "react-icons/bs";
 import { BsBoxSeam } from "react-icons/bs";
 import { GoCreditCard } from "react-icons/go";

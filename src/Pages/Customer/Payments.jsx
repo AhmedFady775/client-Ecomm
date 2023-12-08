@@ -1,5 +1,4 @@
 import React from "react";
-import { Store } from "../../redux/Store";
 import { useContext } from "react";
 import CustomerNav from "./CustomerNav";
 
